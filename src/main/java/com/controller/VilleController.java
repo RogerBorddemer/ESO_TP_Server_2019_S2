@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.blo.VilleFranceBLO;
-import com.dto.Mission;
 import com.dto.client.VilleFrance;
 
 @RestController
@@ -27,9 +26,8 @@ class VilleController {
 		System.out.println("Appel GETsqdsq");
 
 		ArrayList<VilleFrance> listVilles = villeService.getInfoVilles(codeCommuneINSEE);
-		System.out.println(listVilles.get(0).getNomCommune());
 
-		return "coucou";
+		return listVilles.toString();
 	}
 
 	// Methode POST

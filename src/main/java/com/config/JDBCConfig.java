@@ -9,18 +9,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
-import com.mysql.jdbc.Driver;
-
 @Configuration
 @PropertySource(value = {"classpath:application.properties"})
 public class JDBCConfig {
 	
 	
+	public static String dbDriver;
+	@Value("${jdbc.driver.class.name}")
+	public void setDbDriver(String string) {
+		dbDriver = string;
+	}
 	
-	public static String url;
-	@Value("${jdbc.url}")
-	public void setUrl(String string) {
-		url = string;
+	public static String dbConnection;
+	@Value("${jdbc.connection}")
+	public void setDbConnection(String string) {
+		dbConnection = string;
 	}
 	public static String user;
 	@Value("${jdbc.user}")
@@ -33,17 +36,19 @@ public class JDBCConfig {
 		password = string;
 	} 
 	
+	static Connection connection = null;
+
+	
 	@Bean
     public static Connection getConnection(){		
 
-		Connection connection = null;
-		
 		try {
-			DriverManager.registerDriver(new Driver());
-			//connection = DriverManager.getConnection(url + "?user=" + user + "&password=" + password);
-			connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:13306/villes?user=phpmyadmin&password=eseo");
+			Class.forName(dbDriver);
+					
+			connection = DriverManager.getConnection(dbConnection ,user, password);
+			//connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:13306/villes?user=phpmyadmin&password=eseo");
 
-		} catch (SQLException e) {
+		} catch (SQLException | ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		

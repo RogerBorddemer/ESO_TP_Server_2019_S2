@@ -25,7 +25,7 @@ public class VilleFranceDAOImpl implements VilleFranceDAO{
 			Statement statement = con.createStatement();
 
 			// execute la requete
-			ResultSet resultSet = statement.executeQuery("SELECT * FROM villes_france");
+			ResultSet resultSet = statement.executeQuery("SELECT * FROM VILLE_FRANCE");
 
 			// parcourt des éléments de réponse
 			while (resultSet.next()) {
