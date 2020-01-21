@@ -9,24 +9,25 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.blo.MissionBLO;
+import com.blo.VilleFranceBLO;
 import com.dto.Mission;
+import com.dto.client.VilleFrance;
 
 @RestController
 //@RequestMapping("/path")
-class MissionController {
+class VilleController {
 
 	@Autowired
-	MissionBLO missionService;
+	VilleFranceBLO villeService;
 
 	// Methode GET
-	@RequestMapping(value = "/mission", method = RequestMethod.GET)
+	@RequestMapping(value = "/ville", method = RequestMethod.GET)
 	@ResponseBody
-	public String recover(@RequestParam(required = false, value = "numTrain") String numTrain) {
-		System.out.println("Appel GET");
+	public String recover(@RequestParam(required = false, value = "codeCommuneINSEE") String codeCommuneINSEE) {
+		System.out.println("Appel GETsqdsq");
 
-		ArrayList<Mission> listMission = missionService.getInfoMission(numTrain);
-		return listMission.get(0).getLieuDestination().getLibPr();
+		//ArrayList<VilleFrance> listVilles = villeService.getInfoVilles(codeCommuneINSEE);
+		return "coucou";
 	}
 
 	// Methode POST

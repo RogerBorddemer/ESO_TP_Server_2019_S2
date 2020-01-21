@@ -4,9 +4,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value=HttpStatus.FORBIDDEN)
-public class MissionException extends RuntimeException {
+public class VilleException extends RuntimeException {
 
-	public MissionException(String message) {
+	public VilleException(String message) {
 		super(message);
 	}
 }
