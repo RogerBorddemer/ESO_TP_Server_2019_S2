@@ -5,16 +5,14 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.MissionDAO;
-import com.dao.VilleFranceDAO;
-import com.dto.Mission;
+import com.dao.VilleFranceDAOImpl;
 import com.dto.client.VilleFrance;
 
 @Service
 public class VilleBLOImpl implements VilleFranceBLO {
 
 	@Autowired
-	private VilleFranceDAO villeFranceDAO;
+	private VilleFranceDAOImpl villeFranceDAO;
 
 	@Override
 	public ArrayList<VilleFrance> getInfoVilles(String codeCommuneINSEE) throws VilleException {
@@ -27,7 +25,7 @@ public class VilleBLOImpl implements VilleFranceBLO {
 		} else {
 			listVilles = villeFranceDAO.findAllVilles();
 		}
-		System.out.println("Nombre de mission récupéré : " + listVilles.size());
+		System.out.println("Nombre de ville récupéré : " + listVilles.size());
 
 		return listVilles;
 	}

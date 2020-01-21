@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import org.springframework.stereotype.Repository;
 
-import com.config.JDBCConfigurationSol1;
+import com.config.JDBCConfig;
 import com.dto.LieuMission;
 import com.dto.Mission;
 
@@ -21,7 +21,7 @@ public class MissionDAOImpl implements MissionDAO {
 
 		try {
 			// solution 1
-			Connection con = JDBCConfigurationSol1.getConnection();
+			Connection con = JDBCConfig.getConnection();
 			// solution 2
 			// Connection con = JDBCConfigurationSol2.getConnection();
 			Statement statement = con.createStatement();

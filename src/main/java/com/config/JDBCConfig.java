@@ -9,6 +9,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import com.mysql.jdbc.Driver;
+
+@Configuration
+@PropertySource(value = {"classpath:application.properties"})
 public class JDBCConfig {
 	
 	
@@ -35,8 +39,10 @@ public class JDBCConfig {
 		Connection connection = null;
 		
 		try {
-			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			connection = DriverManager.getConnection(url + "?user=" + user + "&password=" + password);
+			DriverManager.registerDriver(new Driver());
+			//connection = DriverManager.getConnection(url + "?user=" + user + "&password=" + password);
+			connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:13306/villes?user=phpmyadmin&password=eseo");
+
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

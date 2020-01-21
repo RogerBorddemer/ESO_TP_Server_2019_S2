@@ -33,9 +33,9 @@ class VilleController {
 	}
 
 	// Methode POST
-	//TODO
-	
+	// TODO
+
 	// Methode PUT
-	//TODO
+	// TODO
 
 }
