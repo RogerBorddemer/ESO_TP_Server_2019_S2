@@ -36,7 +36,7 @@ public class JDBCConfig {
 		
 		try {
 			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-			connection = DriverManager.getConnection(url + "?user=" + user + "&password=" + pwd);
+			connection = DriverManager.getConnection(url + "?user=" + user + "&password=" + password);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -26,7 +26,9 @@ class VilleController {
 	public String recover(@RequestParam(required = false, value = "codeCommuneINSEE") String codeCommuneINSEE) {
 		System.out.println("Appel GETsqdsq");
 
-		//ArrayList<VilleFrance> listVilles = villeService.getInfoVilles(codeCommuneINSEE);
+		ArrayList<VilleFrance> listVilles = villeService.getInfoVilles(codeCommuneINSEE);
+		System.out.println(listVilles.get(0).getNomCommune());
+
 		return "coucou";
 	}
 

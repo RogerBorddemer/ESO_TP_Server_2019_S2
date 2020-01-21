@@ -1,17 +1,12 @@
 package com.dao;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.config.DAOConnection;
 import com.config.JDBCConfig;
-import com.config.JDBCConfigurationSol1;
-import com.dto.LieuMission;
-import com.dto.Mission;
 import com.dto.client.VilleFrance;
 
 public class VilleFranceDAO {
