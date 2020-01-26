@@ -2,14 +2,13 @@ package com.dto.client;
 
 public class VilleFrance {
 
-	private String codeCommuneINSEE;
-	private String nomCommune;
-	private String codePostal;
-	private String libelleAcheminement;
-	private String ligne5;
-	private String latitude;
-	private String longitude;
-	private boolean isActive;
+	private String codeCommuneINSEE = "";
+	private String nomCommune= "";
+	private String codePostal= "";
+	private String libelleAcheminement= "";
+	private String ligne5= "";
+	private String latitude= "";
+	private String longitude= "";
 	
 	public VilleFrance() {
 		super();
@@ -71,19 +70,13 @@ public class VilleFrance {
 		this.longitude = longitude;
 	}
 	
-	public boolean isActive() {
-		return isActive;
-	}
 
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
 
 	@Override
 	public String toString() {
 		return "VilleFrance [codeCommuneINSEE=" + codeCommuneINSEE + ", nomCommune=" + nomCommune + ", codePostal="
 				+ codePostal + ", libelleAcheminement=" + libelleAcheminement + ", ligne5=" + ligne5 + ", latitude="
-				+ latitude + ", longitude=" + longitude + ", isActive=" + isActive + "]";
+				+ latitude + ", longitude=" + longitude + "]";
 	}
 	
 }
